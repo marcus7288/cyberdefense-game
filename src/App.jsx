@@ -207,7 +207,759 @@ const CybersecurityGame = () => {
       ]
     }
   ];
+// Additional 50 OWASP Security Incidents for CyberDefense Game
+// Add these to the incidents array in App.jsx
 
+{
+  id: 13,
+  title: 'API Authentication Bypass',
+  category: 'API Security',
+  severity: 'critical',
+  description: 'REST API discovered accepting requests without proper authentication tokens.',
+  impact: 30,
+  timeLimit: 60,
+  responses: [
+    { text: 'Implement OAuth 2.0 immediately', roles: ['developer', 'engineer'], success: 90, damage: 8 },
+    { text: 'Add API gateway with authentication', roles: ['engineer', 'neteng'], success: 85, damage: 12 },
+    { text: 'Disable public API endpoints', roles: ['ciso', 'admin'], success: 95, damage: 20 },
+    { text: 'Deploy rate limiting and monitoring', roles: ['analyst', 'engineer'], success: 80, damage: 15 }
+  ]
+},
+{
+  id: 14,
+  title: 'Cross-Site Scripting (XSS) Attack',
+  category: 'Application Security',
+  severity: 'high',
+  description: 'Malicious JavaScript injected into web application stealing user session cookies.',
+  impact: 22,
+  timeLimit: 75,
+  responses: [
+    { text: 'Deploy Content Security Policy', roles: ['developer', 'engineer'], success: 88, damage: 8 },
+    { text: 'Sanitize all user inputs', roles: ['developer'], success: 85, damage: 12 },
+    { text: 'Invalidate all active sessions', roles: ['admin', 'engineer'], success: 90, damage: 15 },
+    { text: 'Enable XSS protection headers', roles: ['engineer', 'neteng'], success: 82, damage: 10 }
+  ]
+},
+{
+  id: 15,
+  title: 'Unencrypted Database Backup Exposed',
+  category: 'Data Security',
+  severity: 'critical',
+  description: 'Full database backup found on public FTP server containing customer PII.',
+  impact: 35,
+  timeLimit: 45,
+  responses: [
+    { text: 'Remove backup and secure FTP immediately', roles: ['admin', 'engineer'], success: 95, damage: 10 },
+    { text: 'Enable encryption for all backups', roles: ['engineer', 'admin'], success: 90, damage: 15 },
+    { text: 'Audit all backup locations', roles: ['analyst', 'responder'], success: 85, damage: 20 },
+    { text: 'Begin breach notification procedures', roles: ['ciso'], success: 80, damage: 30 }
+  ]
+},
+{
+  id: 16,
+  title: 'Privilege Escalation Exploit',
+  category: 'Access Control',
+  severity: 'critical',
+  description: 'Standard user discovered way to gain admin privileges through URL manipulation.',
+  impact: 28,
+  timeLimit: 60,
+  responses: [
+    { text: 'Patch authorization checks', roles: ['developer', 'engineer'], success: 92, damage: 8 },
+    { text: 'Implement role-based access control', roles: ['engineer', 'ciso'], success: 88, damage: 12 },
+    { text: 'Audit all user permissions', roles: ['admin', 'analyst'], success: 85, damage: 15 },
+    { text: 'Add privilege escalation monitoring', roles: ['analyst', 'engineer'], success: 80, damage: 10 }
+  ]
+},
+{
+  id: 17,
+  title: 'Cryptojacking Malware Detected',
+  category: 'Malware',
+  severity: 'medium',
+  description: 'Cryptocurrency mining software found running on multiple workstations.',
+  impact: 15,
+  timeLimit: 90,
+  responses: [
+    { text: 'Quarantine infected systems', roles: ['admin', 'responder'], success: 90, damage: 5 },
+    { text: 'Deploy endpoint detection and response', roles: ['engineer', 'analyst'], success: 85, damage: 8 },
+    { text: 'Block mining pool domains', roles: ['neteng', 'engineer'], success: 88, damage: 6 },
+    { text: 'Scan entire network for IOCs', roles: ['analyst', 'responder'], success: 82, damage: 12 }
+  ]
+},
+{
+  id: 18,
+  title: 'Session Hijacking Attack',
+  category: 'Authentication',
+  severity: 'high',
+  description: 'Attacker captured session tokens over unencrypted WiFi and accessing user accounts.',
+  impact: 24,
+  timeLimit: 60,
+  responses: [
+    { text: 'Force HTTPS on all connections', roles: ['engineer', 'neteng'], success: 95, damage: 6 },
+    { text: 'Invalidate all sessions and reset tokens', roles: ['admin', 'developer'], success: 90, damage: 12 },
+    { text: 'Implement session timeout controls', roles: ['developer', 'engineer'], success: 85, damage: 10 },
+    { text: 'Enable certificate pinning', roles: ['engineer', 'developer'], success: 80, damage: 15 }
+  ]
+},
+{
+  id: 19,
+  title: 'XML External Entity (XXE) Injection',
+  category: 'Application Security',
+  severity: 'high',
+  description: 'XML parser vulnerability allows reading sensitive files from application server.',
+  impact: 26,
+  timeLimit: 75,
+  responses: [
+    { text: 'Disable XML external entity processing', roles: ['developer', 'engineer'], success: 92, damage: 8 },
+    { text: 'Update XML parsing libraries', roles: ['developer', 'admin'], success: 88, damage: 12 },
+    { text: 'Implement input validation for XML', roles: ['developer'], success: 85, damage: 10 },
+    { text: 'Deploy web application firewall rules', roles: ['engineer', 'neteng'], success: 80, damage: 15 }
+  ]
+},
+{
+  id: 20,
+  title: 'Bluetooth Eavesdropping',
+  category: 'Wireless Security',
+  severity: 'medium',
+  description: 'Unsecured Bluetooth devices in conference rooms allowing audio interception.',
+  impact: 18,
+  timeLimit: 90,
+  responses: [
+    { text: 'Disable Bluetooth on all devices', roles: ['admin', 'engineer'], success: 90, damage: 8 },
+    { text: 'Implement Bluetooth security policy', roles: ['ciso', 'engineer'], success: 85, damage: 12 },
+    { text: 'Deploy Bluetooth monitoring solution', roles: ['neteng', 'analyst'], success: 82, damage: 10 },
+    { text: 'Educate users on wireless risks', roles: ['user', 'ciso'], success: 75, damage: 15 }
+  ]
+},
+{
+  id: 21,
+  title: 'Container Image Vulnerability',
+  category: 'DevOps Security',
+  severity: 'high',
+  description: 'Production Docker containers running with critical vulnerabilities and as root.',
+  impact: 25,
+  timeLimit: 75,
+  responses: [
+    { text: 'Rebuild containers with patched base images', roles: ['developer', 'engineer'], success: 90, damage: 10 },
+    { text: 'Implement container security scanning', roles: ['engineer', 'developer'], success: 88, damage: 12 },
+    { text: 'Run containers as non-root users', roles: ['developer', 'admin'], success: 85, damage: 8 },
+    { text: 'Deploy runtime container protection', roles: ['engineer', 'analyst'], success: 80, damage: 15 }
+  ]
+},
+{
+  id: 22,
+  title: 'DNS Cache Poisoning',
+  category: 'Network Attack',
+  severity: 'high',
+  description: 'DNS server compromised, redirecting users to malicious websites.',
+  impact: 27,
+  timeLimit: 60,
+  responses: [
+    { text: 'Flush DNS cache and update servers', roles: ['neteng', 'admin'], success: 92, damage: 10 },
+    { text: 'Implement DNSSEC validation', roles: ['neteng', 'engineer'], success: 88, damage: 12 },
+    { text: 'Switch to secure DNS providers', roles: ['neteng', 'ciso'], success: 85, damage: 15 },
+    { text: 'Monitor DNS queries for anomalies', roles: ['analyst', 'neteng'], success: 80, damage: 18 }
+  ]
+},
+{
+  id: 23,
+  title: 'Hardcoded Credentials in Code',
+  category: 'Secret Management',
+  severity: 'critical',
+  description: 'Database passwords and API keys found hardcoded in public GitHub repository.',
+  impact: 32,
+  timeLimit: 45,
+  responses: [
+    { text: 'Rotate all exposed credentials immediately', roles: ['admin', 'developer'], success: 95, damage: 12 },
+    { text: 'Remove secrets from repository history', roles: ['developer', 'ciso'], success: 88, damage: 15 },
+    { text: 'Implement secrets management vault', roles: ['engineer', 'developer'], success: 90, damage: 10 },
+    { text: 'Scan all repositories for secrets', roles: ['analyst', 'developer'], success: 85, damage: 20 }
+  ]
+},
+{
+  id: 24,
+  title: 'Business Email Compromise (BEC)',
+  category: 'Social Engineering',
+  severity: 'high',
+  description: 'CFO impersonation email requesting wire transfer to fraudulent account.',
+  impact: 28,
+  timeLimit: 75,
+  responses: [
+    { text: 'Verify request through separate channel', roles: ['ciso', 'user'], success: 95, damage: 5 },
+    { text: 'Block sender and similar domains', roles: ['analyst', 'neteng'], success: 90, damage: 8 },
+    { text: 'Implement email authentication (DMARC)', roles: ['engineer', 'neteng'], success: 88, damage: 12 },
+    { text: 'Train staff on BEC tactics', roles: ['user', 'ciso'], success: 80, damage: 25 }
+  ]
+},
+{
+  id: 25,
+  title: 'Outdated Web Framework Exploit',
+  category: 'Vulnerability Management',
+  severity: 'critical',
+  description: 'Critical remote code execution vulnerability in legacy web framework version.',
+  impact: 33,
+  timeLimit: 60,
+  responses: [
+    { text: 'Apply emergency security patches', roles: ['developer', 'admin'], success: 90, damage: 12 },
+    { text: 'Upgrade framework to latest version', roles: ['developer', 'engineer'], success: 85, damage: 15 },
+    { text: 'Isolate vulnerable applications', roles: ['admin', 'neteng'], success: 92, damage: 10 },
+    { text: 'Implement virtual patching via WAF', roles: ['engineer', 'neteng'], success: 82, damage: 18 }
+  ]
+},
+{
+  id: 26,
+  title: 'Shadow IT Discovery',
+  category: 'Governance',
+  severity: 'medium',
+  description: 'Unapproved cloud services discovered processing customer data without security review.',
+  impact: 20,
+  timeLimit: 90,
+  responses: [
+    { text: 'Inventory and assess all shadow IT', roles: ['ciso', 'analyst'], success: 85, damage: 10 },
+    { text: 'Block unapproved cloud services', roles: ['neteng', 'engineer'], success: 80, damage: 15 },
+    { text: 'Implement cloud access security broker', roles: ['engineer', 'ciso'], success: 88, damage: 8 },
+    { text: 'Create approved SaaS list and policy', roles: ['ciso', 'user'], success: 82, damage: 12 }
+  ]
+},
+{
+  id: 27,
+  title: 'API Rate Limit Abuse',
+  category: 'API Security',
+  severity: 'medium',
+  description: 'Automated scraping tools overwhelming API endpoints and extracting data.',
+  impact: 18,
+  timeLimit: 75,
+  responses: [
+    { text: 'Implement aggressive rate limiting', roles: ['engineer', 'developer'], success: 90, damage: 6 },
+    { text: 'Require API authentication tokens', roles: ['developer', 'engineer'], success: 88, damage: 10 },
+    { text: 'Deploy CAPTCHA for suspicious requests', roles: ['developer', 'engineer'], success: 85, damage: 8 },
+    { text: 'Block IP ranges of scrapers', roles: ['neteng', 'analyst'], success: 80, damage: 12 }
+  ]
+},
+{
+  id: 28,
+  title: 'Watering Hole Attack',
+  category: 'Advanced Threats',
+  severity: 'high',
+  description: 'Industry news site frequented by employees compromised with malware.',
+  impact: 26,
+  timeLimit: 60,
+  responses: [
+    { text: 'Block compromised domain immediately', roles: ['neteng', 'analyst'], success: 92, damage: 10 },
+    { text: 'Scan endpoints for infection', roles: ['responder', 'analyst'], success: 88, damage: 15 },
+    { text: 'Implement URL filtering and sandboxing', roles: ['engineer', 'neteng'], success: 85, damage: 12 },
+    { text: 'Issue security advisory to staff', roles: ['user', 'ciso'], success: 80, damage: 18 }
+  ]
+},
+{
+  id: 29,
+  title: 'Insecure Deserialization',
+  category: 'Application Security',
+  severity: 'critical',
+  description: 'Application deserializes untrusted data allowing remote code execution.',
+  impact: 30,
+  timeLimit: 60,
+  responses: [
+    { text: 'Disable unsafe deserialization', roles: ['developer', 'engineer'], success: 92, damage: 8 },
+    { text: 'Implement input validation and signing', roles: ['developer'], success: 88, damage: 12 },
+    { text: 'Update serialization libraries', roles: ['developer', 'admin'], success: 85, damage: 15 },
+    { text: 'Deploy runtime application protection', roles: ['engineer', 'analyst'], success: 80, damage: 18 }
+  ]
+},
+{
+  id: 30,
+  title: 'VPN Credential Stuffing',
+  category: 'Authentication',
+  severity: 'high',
+  description: 'Thousands of login attempts to VPN using leaked credentials from other breaches.',
+  impact: 24,
+  timeLimit: 75,
+  responses: [
+    { text: 'Enable multi-factor authentication', roles: ['engineer', 'admin'], success: 95, damage: 6 },
+    { text: 'Implement account lockout policies', roles: ['admin', 'engineer'], success: 90, damage: 10 },
+    { text: 'Deploy anomaly detection for logins', roles: ['analyst', 'engineer'], success: 85, damage: 12 },
+    { text: 'Force password resets for all users', roles: ['admin', 'user'], success: 88, damage: 15 }
+  ]
+},
+{
+  id: 31,
+  title: 'Certificate Expiration Crisis',
+  category: 'PKI Management',
+  severity: 'high',
+  description: 'Critical SSL/TLS certificates expired, breaking customer-facing applications.',
+  impact: 25,
+  timeLimit: 45,
+  responses: [
+    { text: 'Renew certificates immediately', roles: ['admin', 'engineer'], success: 95, damage: 18 },
+    { text: 'Implement automated certificate management', roles: ['engineer', 'admin'], success: 90, damage: 12 },
+    { text: 'Deploy certificate monitoring', roles: ['engineer', 'analyst'], success: 85, damage: 15 },
+    { text: 'Update certificate inventory', roles: ['admin', 'analyst'], success: 80, damage: 20 }
+  ]
+},
+{
+  id: 32,
+  title: 'USB Rubber Ducky Attack',
+  category: 'Physical Security',
+  severity: 'high',
+  description: 'Malicious USB device found in parking lot executed payload when plugged in.',
+  impact: 22,
+  timeLimit: 60,
+  responses: [
+    { text: 'Isolate compromised workstation', roles: ['responder', 'admin'], success: 95, damage: 8 },
+    { text: 'Disable USB ports organization-wide', roles: ['admin', 'engineer'], success: 85, damage: 15 },
+    { text: 'Deploy USB device control policy', roles: ['engineer', 'ciso'], success: 90, damage: 10 },
+    { text: 'Train staff on physical security', roles: ['user', 'ciso'], success: 80, damage: 18 }
+  ]
+},
+{
+  id: 33,
+  title: 'Server-Side Request Forgery (SSRF)',
+  category: 'Application Security',
+  severity: 'high',
+  description: 'Application can be tricked into making requests to internal systems.',
+  impact: 26,
+  timeLimit: 75,
+  responses: [
+    { text: 'Validate and sanitize all URLs', roles: ['developer', 'engineer'], success: 90, damage: 10 },
+    { text: 'Implement network segmentation', roles: ['neteng', 'engineer'], success: 88, damage: 12 },
+    { text: 'Whitelist allowed destination hosts', roles: ['developer', 'engineer'], success: 85, damage: 8 },
+    { text: 'Deploy egress filtering', roles: ['neteng', 'engineer'], success: 82, damage: 15 }
+  ]
+},
+{
+  id: 34,
+  title: 'Rogue Access Point',
+  category: 'Wireless Security',
+  severity: 'high',
+  description: 'Unauthorized WiFi access point broadcasting corporate SSID in office.',
+  impact: 23,
+  timeLimit: 60,
+  responses: [
+    { text: 'Locate and disable rogue AP', roles: ['neteng', 'admin'], success: 92, damage: 8 },
+    { text: 'Deploy wireless intrusion detection', roles: ['neteng', 'engineer'], success: 88, damage: 12 },
+    { text: 'Implement 802.1X authentication', roles: ['neteng', 'engineer'], success: 85, damage: 10 },
+    { text: 'Conduct wireless site survey', roles: ['neteng', 'analyst'], success: 80, damage: 15 }
+  ]
+},
+{
+  id: 35,
+  title: 'Log4Shell Vulnerability',
+  category: 'Vulnerability Management',
+  severity: 'critical',
+  description: 'Log4j vulnerability detected in multiple Java applications allowing RCE.',
+  impact: 35,
+  timeLimit: 45,
+  responses: [
+    { text: 'Patch Log4j to safe version immediately', roles: ['developer', 'admin'], success: 92, damage: 10 },
+    { text: 'Disable JNDI lookup functionality', roles: ['engineer', 'admin'], success: 88, damage: 12 },
+    { text: 'Deploy WAF rules to block exploits', roles: ['engineer', 'neteng'], success: 85, damage: 15 },
+    { text: 'Scan for exploitation attempts', roles: ['analyst', 'responder'], success: 90, damage: 20 }
+  ]
+},
+{
+  id: 36,
+  title: 'OAuth Token Leakage',
+  category: 'Authentication',
+  severity: 'high',
+  description: 'OAuth access tokens exposed in browser history and server logs.',
+  impact: 24,
+  timeLimit: 75,
+  responses: [
+    { text: 'Revoke all exposed tokens', roles: ['developer', 'admin'], success: 95, damage: 8 },
+    { text: 'Implement token rotation policy', roles: ['developer', 'engineer'], success: 90, damage: 10 },
+    { text: 'Remove tokens from logs', roles: ['admin', 'analyst'], success: 88, damage: 12 },
+    { text: 'Use authorization code flow with PKCE', roles: ['developer', 'engineer'], success: 85, damage: 15 }
+  ]
+},
+{
+  id: 37,
+  title: 'Malicious Browser Extension',
+  category: 'Endpoint Security',
+  severity: 'medium',
+  description: 'Popular browser extension updated to steal credentials and session data.',
+  impact: 20,
+  timeLimit: 90,
+  responses: [
+    { text: 'Block extension via browser policy', roles: ['admin', 'engineer'], success: 92, damage: 6 },
+    { text: 'Reset credentials for affected users', roles: ['admin', 'user'], success: 88, damage: 12 },
+    { text: 'Implement extension whitelist policy', roles: ['ciso', 'engineer'], success: 85, damage: 10 },
+    { text: 'Scan for data exfiltration', roles: ['analyst', 'responder'], success: 80, damage: 15 }
+  ]
+},
+{
+  id: 38,
+  title: 'GraphQL API Injection',
+  category: 'API Security',
+  severity: 'high',
+  description: 'GraphQL endpoint vulnerable to query injection exposing sensitive data.',
+  impact: 25,
+  timeLimit: 75,
+  responses: [
+    { text: 'Implement query complexity limits', roles: ['developer', 'engineer'], success: 90, damage: 10 },
+    { text: 'Add input validation and sanitization', roles: ['developer'], success: 88, damage: 12 },
+    { text: 'Deploy GraphQL-aware WAF', roles: ['engineer', 'neteng'], success: 85, damage: 8 },
+    { text: 'Disable introspection in production', roles: ['developer', 'engineer'], success: 82, damage: 15 }
+  ]
+},
+{
+  id: 39,
+  title: 'Printer Security Breach',
+  category: 'IoT Security',
+  severity: 'medium',
+  description: 'Network printers compromised, storing copies of sensitive documents.',
+  impact: 18,
+  timeLimit: 90,
+  responses: [
+    { text: 'Isolate printers to separate VLAN', roles: ['neteng', 'admin'], success: 90, damage: 8 },
+    { text: 'Update printer firmware and passwords', roles: ['admin', 'engineer'], success: 88, damage: 10 },
+    { text: 'Disable printer hard drive storage', roles: ['admin', 'engineer'], success: 85, damage: 6 },
+    { text: 'Implement secure print release', roles: ['engineer', 'user'], success: 82, damage: 12 }
+  ]
+},
+{
+  id: 40,
+  title: 'Time-of-Check Time-of-Use (TOCTOU)',
+  category: 'Application Security',
+  severity: 'high',
+  description: 'Race condition in payment processing allows unauthorized transactions.',
+  impact: 27,
+  timeLimit: 60,
+  responses: [
+    { text: 'Implement atomic transactions', roles: ['developer', 'engineer'], success: 92, damage: 12 },
+    { text: 'Add pessimistic locking mechanism', roles: ['developer'], success: 88, damage: 10 },
+    { text: 'Deploy transaction monitoring', roles: ['analyst', 'developer'], success: 85, damage: 15 },
+    { text: 'Rollback fraudulent transactions', roles: ['admin', 'responder'], success: 90, damage: 20 }
+  ]
+},
+{
+  id: 41,
+  title: 'Zoom Bombing Attack',
+  category: 'Collaboration Security',
+  severity: 'low',
+  description: 'Unauthorized participants disrupting virtual meetings with offensive content.',
+  impact: 12,
+  timeLimit: 90,
+  responses: [
+    { text: 'Enable waiting room for all meetings', roles: ['user', 'admin'], success: 95, damage: 3 },
+    { text: 'Require meeting passwords', roles: ['admin', 'user'], success: 90, damage: 5 },
+    { text: 'Disable screen sharing for participants', roles: ['user', 'ciso'], success: 88, damage: 4 },
+    { text: 'Train staff on meeting security', roles: ['user', 'ciso'], success: 85, damage: 8 }
+  ]
+},
+{
+  id: 42,
+  title: 'Typosquatting Attack',
+  category: 'Social Engineering',
+  severity: 'medium',
+  description: 'Fake domain similar to company website collecting employee credentials.',
+  impact: 19,
+  timeLimit: 75,
+  responses: [
+    { text: 'Register similar domain variations', roles: ['ciso', 'admin'], success: 85, damage: 10 },
+    { text: 'Report to domain registrar and authorities', roles: ['ciso', 'analyst'], success: 80, damage: 12 },
+    { text: 'Deploy domain monitoring service', roles: ['analyst', 'engineer'], success: 88, damage: 8 },
+    { text: 'Warn employees about fake site', roles: ['user', 'ciso'], success: 90, damage: 15 }
+  ]
+},
+{
+  id: 43,
+  title: 'IPv6 Tunneling Bypass',
+  category: 'Network Attack',
+  severity: 'high',
+  description: 'Attackers using IPv6 tunnels to bypass firewall rules and filters.',
+  impact: 24,
+  timeLimit: 60,
+  responses: [
+    { text: 'Block unauthorized IPv6 traffic', roles: ['neteng', 'engineer'], success: 90, damage: 10 },
+    { text: 'Implement IPv6 firewall rules', roles: ['neteng', 'engineer'], success: 88, damage: 12 },
+    { text: 'Deploy IPv6 traffic monitoring', roles: ['neteng', 'analyst'], success: 85, damage: 8 },
+    { text: 'Disable IPv6 if not needed', roles: ['neteng', 'ciso'], success: 92, damage: 15 }
+  ]
+},
+{
+  id: 44,
+  title: 'Firmware Backdoor Discovery',
+  category: 'Hardware Security',
+  severity: 'critical',
+  description: 'Undocumented backdoor found in network equipment firmware.',
+  impact: 32,
+  timeLimit: 60,
+  responses: [
+    { text: 'Replace compromised hardware', roles: ['admin', 'neteng'], success: 90, damage: 20 },
+    { text: 'Update to vendor-patched firmware', roles: ['admin', 'engineer'], success: 88, damage: 15 },
+    { text: 'Isolate affected devices', roles: ['neteng', 'admin'], success: 95, damage: 12 },
+    { text: 'Implement network segmentation', roles: ['neteng', 'engineer'], success: 85, damage: 18 }
+  ]
+},
+{
+  id: 45,
+  title: 'Clipboard Hijacking Malware',
+  category: 'Malware',
+  severity: 'medium',
+  description: 'Malware intercepting clipboard to replace cryptocurrency wallet addresses.',
+  impact: 17,
+  timeLimit: 75,
+  responses: [
+    { text: 'Deploy endpoint detection and removal', roles: ['responder', 'admin'], success: 92, damage: 6 },
+    { text: 'Educate users on clipboard risks', roles: ['user', 'ciso'], success: 85, damage: 10 },
+    { text: 'Implement application whitelisting', roles: ['engineer', 'admin'], success: 88, damage: 8 },
+    { text: 'Monitor for suspicious processes', roles: ['analyst', 'responder'], success: 80, damage: 12 }
+  ]
+},
+{
+  id: 46,
+  title: 'LDAP Injection Attack',
+  category: 'Application Security',
+  severity: 'high',
+  description: 'Directory service queries vulnerable to injection, exposing user information.',
+  impact: 23,
+  timeLimit: 75,
+  responses: [
+    { text: 'Sanitize LDAP query inputs', roles: ['developer', 'engineer'], success: 90, damage: 8 },
+    { text: 'Use parameterized LDAP queries', roles: ['developer'], success: 88, damage: 10 },
+    { text: 'Implement least privilege for LDAP access', roles: ['admin', 'engineer'], success: 85, damage: 12 },
+    { text: 'Deploy LDAP query monitoring', roles: ['analyst', 'engineer'], success: 82, damage: 15 }
+  ]
+},
+{
+  id: 47,
+  title: 'Deepfake Voice Phishing',
+  category: 'Social Engineering',
+  severity: 'high',
+  description: 'AI-generated voice of CEO used in phone call requesting urgent fund transfer.',
+  impact: 26,
+  timeLimit: 60,
+  responses: [
+    { text: 'Verify through alternate communication channel', roles: ['ciso', 'user'], success: 95, damage: 5 },
+    { text: 'Implement voice authentication system', roles: ['engineer', 'ciso'], success: 85, damage: 15 },
+    { text: 'Establish verification protocols', roles: ['ciso', 'user'], success: 90, damage: 10 },
+    { text: 'Train staff on deepfake threats', roles: ['user', 'ciso'], success: 88, damage: 20 }
+  ]
+},
+{
+  id: 48,
+  title: 'WebSocket Security Flaw',
+  category: 'Application Security',
+  severity: 'medium',
+  description: 'Real-time WebSocket connections lacking proper authentication and encryption.',
+  impact: 20,
+  timeLimit: 90,
+  responses: [
+    { text: 'Implement WebSocket authentication', roles: ['developer', 'engineer'], success: 90, damage: 8 },
+    { text: 'Enable WSS (WebSocket over TLS)', roles: ['engineer', 'neteng'], success: 92, damage: 6 },
+    { text: 'Add origin validation', roles: ['developer', 'engineer'], success: 88, damage: 10 },
+    { text: 'Deploy WebSocket rate limiting', roles: ['engineer', 'developer'], success: 85, damage: 12 }
+  ]
+},
+{
+  id: 49,
+  title: 'Memory Scraping POS Malware',
+  category: 'Malware',
+  severity: 'critical',
+  description: 'Point-of-sale systems infected with RAM scraper stealing credit card data.',
+  impact: 34,
+  timeLimit: 45,
+  responses: [
+    { text: 'Isolate infected POS systems immediately', roles: ['responder', 'admin'], success: 95, damage: 15 },
+    { text: 'Deploy endpoint protection on POS', roles: ['engineer', 'admin'], success: 90, damage: 18 },
+    { text: 'Implement point-to-point encryption', roles: ['engineer', 'ciso'], success: 88, damage: 12 },
+    { text: 'Begin forensic investigation', roles: ['analyst', 'responder'], success: 85, damage: 25 }
+  ]
+},
+{
+  id: 50,
+  title: 'Kubernetes Misconfiguration',
+  category: 'Cloud Security',
+  severity: 'critical',
+  description: 'Kubernetes dashboard exposed to internet with default credentials.',
+  impact: 30,
+  timeLimit: 60,
+  responses: [
+    { text: 'Restrict dashboard access immediately', roles: ['engineer', 'admin'], success: 95, damage: 10 },
+    { text: 'Implement RBAC and authentication', roles: ['engineer', 'developer'], success: 90, damage: 12 },
+    { text: 'Audit all Kubernetes configurations', roles: ['analyst', 'engineer'], success: 88, damage: 15 },
+    { text: 'Deploy Kubernetes security policies', roles: ['engineer', 'ciso'], success: 85, damage: 18 }
+  ]
+},
+{
+  id: 51,
+  title: 'SMS Phishing (Smishing)',
+  category: 'Social Engineering',
+  severity: 'medium',
+  description: 'Employees receiving fake IT support texts requesting credential verification.',
+  impact: 16,
+  timeLimit: 90,
+  responses: [
+    { text: 'Issue company-wide smishing alert', roles: ['user', 'ciso'], success: 90, damage: 5 },
+    { text: 'Block sender phone numbers', roles: ['admin', 'neteng'], success: 85, damage: 10 },
+    { text: 'Implement SMS authentication warnings', roles: ['engineer', 'user'], success: 88, damage: 8 },
+    { text: 'Train employees on SMS threats', roles: ['user', 'ciso'], success: 82, damage: 12 }
+  ]
+},
+{
+  id: 52,
+  title: 'Subdomain Takeover',
+  category: 'DNS Security',
+  severity: 'high',
+  description: 'Abandoned subdomain pointing to deleted cloud service now serving malicious content.',
+  impact: 25,
+  timeLimit: 75,
+  responses: [
+    { text: 'Remove DNS records for subdomain', roles: ['neteng', 'admin'], success: 95, damage: 8 },
+    { text: 'Audit all DNS records', roles: ['neteng', 'analyst'], success: 90, damage: 12 },
+    { text: 'Reclaim cloud service instance', roles: ['admin', 'engineer'], success: 88, damage: 10 },
+    { text: 'Implement DNS monitoring', roles: ['neteng', 'analyst'], success: 85, damage: 15 }
+  ]
+},
+{
+  id: 53,
+  title: 'Formjacking Attack',
+  category: 'Web Security',
+  severity: 'critical',
+  description: 'Malicious JavaScript injected into payment forms stealing credit card details.',
+  impact: 31,
+  timeLimit: 60,
+  responses: [
+    { text: 'Remove malicious code immediately', roles: ['developer', 'responder'], success: 95, damage: 12 },
+    { text: 'Implement Content Security Policy', roles: ['developer', 'engineer'], success: 90, damage: 10 },
+    { text: 'Deploy Subresource Integrity checks', roles: ['developer', 'engineer'], success: 88, damage: 15 },
+    { text: 'Notify affected customers', roles: ['ciso', 'user'], success: 85, damage: 25 }
+  ]
+},
+{
+  id: 54,
+  title: 'BGP Hijacking Incident',
+  category: 'Network Attack',
+  severity: 'critical',
+  description: 'Border Gateway Protocol routes hijacked, redirecting traffic through attacker infrastructure.',
+  impact: 33,
+  timeLimit: 45,
+  responses: [
+    { text: 'Contact ISP to restore correct routes', roles: ['neteng', 'ciso'], success: 90, damage: 20 },
+    { text: 'Implement RPKI validation', roles: ['neteng', 'engineer'], success: 85, damage: 18 },
+    { text: 'Monitor BGP announcements', roles: ['neteng', 'analyst'], success: 88, damage: 15 },
+    { text: 'Enable BGP authentication', roles: ['neteng', 'engineer'], success: 82, damage: 22 }
+  ]
+},
+{
+  id: 55,
+  title: 'CI/CD Pipeline Compromise',
+  category: 'DevOps Security',
+  severity: 'critical',
+  description: 'Build pipeline credentials stolen, allowing code injection into production deployments.',
+  impact: 35,
+  timeLimit: 60,
+  responses: [
+    { text: 'Rotate all pipeline credentials', roles: ['developer', 'admin'], success: 95, damage: 12 },
+    { text: 'Audit recent deployments for tampering', roles: ['developer', 'analyst'], success: 90, damage: 18 },
+    { text: 'Implement pipeline security scanning', roles: ['engineer', 'developer'], success: 88, damage: 15 },
+    { text: 'Enable code signing verification', roles: ['developer', 'engineer'], success: 85, damage: 20 }
+  ]
+},
+{
+  id: 56,
+  title: 'Juice Jacking at Conference',
+  category: 'Physical Security',
+  severity: 'medium',
+  description: 'Compromised USB charging stations at industry event installing malware on devices.',
+  impact: 19,
+  timeLimit: 75,
+  responses: [
+    { text: 'Warn employees about threat', roles: ['user', 'ciso'], success: 90, damage: 8 },
+    { text: 'Scan devices used at conference', roles: ['responder', 'admin'], success: 88, damage: 12 },
+    { text: 'Distribute USB data blockers', roles: ['admin', 'ciso'], success: 85, damage: 10 },
+    { text: 'Implement mobile device management', roles: ['engineer', 'admin'], success: 82, damage: 15 }
+  ]
+},
+{
+  id: 57,
+  title: 'Open Redirect Exploitation',
+  category: 'Application Security',
+  severity: 'medium',
+  description: 'URL redirect vulnerability used in phishing to make malicious links look legitimate.',
+  impact: 17,
+  timeLimit: 90,
+  responses: [
+    { text: 'Validate and whitelist redirect targets', roles: ['developer', 'engineer'], success: 92, damage: 6 },
+    { text: 'Remove open redirect functionality', roles: ['developer'], success: 88, damage: 8 },
+    { text: 'Implement redirect warnings', roles: ['developer', 'user'], success: 85, damage: 10 },
+    { text: 'Block phishing campaign URLs', roles: ['neteng', 'analyst'], success: 90, damage: 12 }
+  ]
+},
+{
+  id: 58,
+  title: 'Malicious npm Package',
+  category: 'Supply Chain',
+  severity: 'high',
+  description: 'Popular dependency updated with cryptocurrency miner and credential stealer.',
+  impact: 27,
+  timeLimit: 60,
+  responses: [
+    { text: 'Remove malicious package version', roles: ['developer', 'admin'], success: 95, damage: 10 },
+    { text: 'Scan codebase for compromise', roles: ['developer', 'analyst'], success: 90, damage: 15 },
+    { text: 'Implement package integrity checks', roles: ['engineer', 'developer'], success: 88, damage: 12 },
+    { text: 'Pin dependency versions', roles: ['developer', 'engineer'], success: 85, damage: 18 }
+  ]
+},
+{
+  id: 59,
+  title: 'RFID Skimming Attack',
+  category: 'Physical Security',
+  severity: 'medium',
+  description: 'Unauthorized RFID readers cloning employee access badges in parking structure.',
+  impact: 18,
+  timeLimit: 75,
+  responses: [
+    { text: 'Deactivate compromised badges', roles: ['admin', 'ciso'], success: 92, damage: 8 },
+    { text: 'Issue RFID-blocking badge holders', roles: ['admin', 'ciso'], success: 88, damage: 10 },
+    { text: 'Upgrade to encrypted access cards', roles: ['engineer', 'admin'], success: 85, damage: 12 },
+    { text: 'Add secondary authentication factor', roles: ['engineer', 'ciso'], success: 90, damage: 6 }
+  ]
+},
+{
+  id: 60,
+  title: 'HTTP Request Smuggling',
+  category: 'Web Security',
+  severity: 'high',
+  description: 'Request smuggling vulnerability bypassing security controls and cache poisoning.',
+  impact: 24,
+  timeLimit: 75,
+  responses: [
+    { text: 'Update web server and proxy configs', roles: ['engineer', 'neteng'], success: 90, damage: 10 },
+    { text: 'Normalize HTTP request handling', roles: ['engineer', 'developer'], success: 88, damage: 12 },
+    { text: 'Deploy HTTP/2 exclusively', roles: ['engineer', 'neteng'], success: 85, damage: 8 },
+    { text: 'Implement strict request validation', roles: ['engineer', 'developer'], success: 82, damage: 15 }
+  ]
+},
+{
+  id: 61,
+  title: 'Leaked Zoom Recording',
+  category: 'Data Leakage',
+  severity: 'high',
+  description: 'Sensitive executive strategy meeting recording found publicly accessible online.',
+  impact: 26,
+  timeLimit: 60,
+  responses: [
+    { text: 'Remove recording from all locations', roles: ['admin', 'ciso'], success: 92, damage: 15 },
+    { text: 'Disable auto-recording feature', roles: ['admin', 'user'], success: 88, damage: 10 },
+    { text: 'Implement DLP for cloud storage', roles: ['engineer', 'ciso'], success: 85, damage: 12 },
+    { text: 'Review access permissions', roles: ['admin', 'analyst'], success: 90, damage: 18 }
+  ]
+},
+{
+  id: 62,
+  title: 'SIM Swapping Attack',
+  category: 'Social Engineering',
+  severity: 'high',
+  description: 'Executive phone number ported to attacker SIM card, compromising 2FA.',
+  impact: 28,
+  timeLimit: 60,
+  responses: [
+    { text: 'Contact carrier to reverse SIM swap', roles: ['ciso', 'admin'], success: 90, damage: 15 },
+    { text: 'Switch from SMS to app-based 2FA', roles: ['engineer', 'admin'], success: 95, damage: 8 },
+    { text: 'Reset all account credentials', roles: ['admin', 'responder'], success: 88, damage: 20 },
+    { text: 'Enable carrier port-out protection', roles: ['ciso', 'admin'], success: 85, damage: 12 }
+  ]
+}
   useEffect(() => {
     if (isTimerActive && timerSeconds > 0) {
       const timer = setTimeout(() => {
